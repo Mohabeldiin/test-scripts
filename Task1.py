@@ -21,11 +21,11 @@ try:
   )
   #print(main.text)
   #articals = main.find_element_by_tag_name("article")
-  articals = main.find_element(By.TAG_NAME,"article")
+  articals = main.find_elements(By.TAG_NAME,"article")
   for articale in articals:
   # header =articale.find_element_by_class_name("entery-summary")
-    header =articale.find_element(By.NAME ,"entery-summary")
-    print(header.tex)
+    header = articale.find_element(By.CLASS_NAME ,"entery-summary")
+    print(header.text)
       
 finally:
   driver.quit()
