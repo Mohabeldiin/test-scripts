@@ -4,13 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 #import time
-PATH = "C:\Selenuim file\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+
+driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
 
 driver.get("https://techwithtim.net") # when u wanna to go to this website
 print(driver.title)
 
-search = driver.find_element_by_name("s")
+#search = driver.find_element_by_name("s")
+search = driver.find_element(By.NAME,"s")
 search.send_keys("test")
 search.send_keys(Keys.RETURN)
 
@@ -19,9 +20,11 @@ try:
     EC.presence_of_element_located((By.ID, "main"))
   )
   #print(main.text)
-  articals = main.find_element_by_tag_name("article")
+  #articals = main.find_element_by_tag_name("article")
+  articals = main.find_element(By.TAG_NAME,"article")
   for articale in articals:
-    header =articale.find_element_by_class_name("entery-summary")
+  # header =articale.find_element_by_class_name("entery-summary")
+    header =articale.find_element(By.NAME ,"entery-summary")
     print(header.tex)
       
 finally:
