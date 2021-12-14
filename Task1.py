@@ -14,7 +14,11 @@ print(driver.title)
 search = driver.find_element(By.NAME,"s")
 search.send_keys("test")
 search.send_keys(Keys.RETURN)
+<<<<<<< HEAD
 #hi
+=======
+#lol
+>>>>>>> a0e8dab45b7516f8cb9c9aa023e31f8fbb99ed71
 try:
   main = WebDriverWait(driver,10).until(
     EC.presence_of_element_located((By.ID, "main"))
