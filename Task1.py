@@ -17,7 +17,7 @@ search.send_keys(Keys.RETURN)
 try:
     main = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "main"))
-  )
+    )
 
     articals = main.find_elements(By.TAG_NAME, "article")
     for articale in articals:
@@ -27,4 +27,3 @@ try:
 
 finally:
     driver.quit()
-
