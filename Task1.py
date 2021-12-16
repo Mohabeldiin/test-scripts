@@ -16,17 +16,16 @@ search.send_keys("test")
 search.send_keys(Keys.RETURN)
 
 try:
-  main = WebDriverWait(driver,10).until(
+    main = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.ID, "main"))
   )
- 
-  articals = main.find_elements(By.TAG_NAME, "article")
-  for articale in articals:
-  
-    header = articale.find_element(By.CLASS_NAME, "entery-summary")
+
+    articals = main.find_elements(By.TAG_NAME, "article")
+    for articale in articals:
+
+      header = articale.find_element(By.CLASS_NAME, "entery-summary")
     print(header.text)
-      
+
 finally:
     driver.quit()
-
 
