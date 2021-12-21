@@ -1,3 +1,5 @@
+"""this test Checks all the text boxes, radio buttons, buttons, etc
+    TC_01_Registration from https://www.loginradius.com/blog/async/test-cases-for-registration-and-login-page/"""
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -48,6 +50,7 @@ class Test_01_User_Interface(unittest.Testcase):
             self.Registratation_button.click()
             if  EC.presence_of_element_located(self.Registratation_button): assert True
         except: assert False
+
         try: 
             main = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located(self.fname_textfield)
@@ -56,16 +59,18 @@ class Test_01_User_Interface(unittest.Testcase):
             self.fname_textfield.send_keys("Test")
             if self.fname_textfield.text == "Test": assert True
         except: assert False
+
         try:
-            main= WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.lname_textfield)
             )
             self.lname_textfield.clear()
             self.lname_textfield.send_keys("Test")
             if self.lname_textfield.text == "Test": assert True
         except: assert False
+
         try:
-            main= WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.email_textfield)
             )
             self.email_textfield.clear()
@@ -74,7 +79,7 @@ class Test_01_User_Interface(unittest.Testcase):
         except: assert False
         
         try:
-            main= WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.password_textfield)
             )
             self.password_textfield.cler()
@@ -82,39 +87,44 @@ class Test_01_User_Interface(unittest.Testcase):
             #if self.password_textfi
             if EC.presence_of_element_located(self.password_textfield): assert True
         except: assert False
+
         try:
-            main: WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.day_selector)
             )
             self.day_selector.click()
             self.driver.find_element(By.XPATH,'//*[@id="day"]/option[6]').click()
             if EC.presence_of_element_located(self.day_selector): assert True
         except: assert False
+
         try:
-            main:WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.month_selector)
             )
             self.day_selector.click()
             self.driver.find_element(By.XPATH,'//*[@id="month"]/option[4]').click()
             if EC.presence_of_element_located(self.month_selector): assert True
         except: assert False
+
         try:
-            main:WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.year_selector)
             )
             self.day_selector.click()
             self.driver.find_element(By.XPATH,'//*[@id="year"]/option[25]').click()
             if EC.presence_of_element_located(self.year_selector): assert True
         except: assert False
+
         try:
-            main:WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.female_radio)
             )
             self.female_radio.click()
             if EC.presence_of_element_located(self.female_radio): assert True
         except: assert False
+        
         try:
-            main:WebDriverWait(self.driver,10).until(
+            main = WebDriverWait(self.driver,10).until(
                 EC.presence_of_element_located(self.signup_button)
             )
             self.email_textfield.clear()
