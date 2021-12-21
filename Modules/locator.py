@@ -16,6 +16,7 @@ class RegistrationPageLocators:#for now it's just facebook
     LASTNAME_TEXTFIELD = (By.NAME,'lastname')
     MOBILENUMBER_TEXTFIELD = (By.NAME,'reg_email__')
     EMAILADDRESS_TEXTFIELD = (By.NAME,'reg_email__')
+    CONFIRMATION_EMAILADDRESS_TEXTFIELD = (By.NAME,'reg_email_confirmation__')
     NEWPASSWORD_TEXTFIELD = (By.NAME,'reg_passwd__')
     DATEOFBIRTH_DAY_SELECTOR = (By.NAME,'birthday_day')
     DATEOFBIRTH_MONTH_SELECTOR = (By.NAME,'birthday_month')
