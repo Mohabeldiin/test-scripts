@@ -26,3 +26,4 @@ class RegistrationPageLocators:#for now it's just facebook
     GENDER_CUSTOM_PRONOUN_RADIO = (By.ID, 'js_1x4')
     GENDER_CUSTOM_OPTINAL_GENDER_TEXTFIELD = (By.NAME,'custom_gender')
     SIGNUP_BUTTON = (By.NAME, 'websubmit')
+    SIGNUP_POPUP = (By.CLASS_NAME, '_n3')
