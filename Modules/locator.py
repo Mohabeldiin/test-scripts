@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class LoginPageLocators(object):
+class LoginPageLocators(object):#for now it's just facebook
     """this class holds facebook login page locators"""
     LOGIN_BUTTON = (By.NAME, 'login')
     REGISTRATION_BUTTON = (By.ID, 'u_0_2_Vw')
@@ -10,7 +10,7 @@ class LoginPageLocators(object):
     FORGOTPASSWORD_HYPERLINK = (By.CLASS_NAME,'_6ltj')
 
 
-class RegistrationPageLocators:
+class RegistrationPageLocators:#for now it's just facebook
     """this class holds facebook Registration page locators"""
     FIRSTNAME_TEXTFIELD = (By.NAME,'firstname')
     LASTNAME_TEXTFIELD = (By.NAME,'lastname')
