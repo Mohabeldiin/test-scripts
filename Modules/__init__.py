@@ -1,9 +1,9 @@
 """this file is to fix packaging and modeling in python 
     for more information read https://docs.python.org/3/tutorial/modules.html#packages"""
 
-from Modules.locator import locator
-from Modules.element import element
-from Modules.page import page
+from locator import locator
+from element import element
+from page import page
 
 """the __all__ contains the moduls names
     NOTE: not that __all__ must be always updated
