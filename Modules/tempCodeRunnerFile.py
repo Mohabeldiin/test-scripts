@@ -1,1 +1,1 @@
-locator
+pass
