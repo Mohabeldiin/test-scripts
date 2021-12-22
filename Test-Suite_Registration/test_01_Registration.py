@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from Modules.locator import *
+from Modules.locator.locator import *
 
 class Test_01_User_Interface(unittest.Testcase):
     """this test Checks all the text boxes, radio buttons, buttons, etc"""
