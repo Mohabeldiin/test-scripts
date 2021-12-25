@@ -18,9 +18,18 @@ class Test_01_login(unittest.TestCase):
         """this function Passing valid phone and password"""
         email = self.driver.find_element(By.NAME, "email")
         email.send_keys("lol67@gmail.com")
-        tab_key= ActionChains()
+       """ try:
+            
+            main = WebDriverWait(self.driver,10).until(
+            EC.presence_of_all_elements_located(self.Error_message) 
+            )
+            if EC.presence_of_all_elements_located(self.Error_message):assert True
+        except: assert False"""
+            
+        tab_key= ActionChains() # was try to know if tab button works
         tab_key.send_keys(keys.TAB)
-        tab_key.perform()
+        tab_key.perform() 
+        
         passwd = self.driver.find_element(By.NAME, "pass")
         passwd.send_keys("123456789")
         passwd.send_keys(Keys.RETURN)
