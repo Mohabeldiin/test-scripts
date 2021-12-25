@@ -164,3 +164,22 @@ cython_debug/
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
+Modules/element/__pycache__/__init__.cpython-39.pyc
+Modules/element/__pycache__/element.cpython-39.pyc
+Modules/locator/__pycache__/__init__.cpython-39.pyc
+Modules/locator/__pycache__/locator.cpython-39.pyc
+Modules/page/__pycache__/__init__.cpython-39.pyc
+Modules/page/__pycache__/page.cpython-39.pyc
+Modules/__pycache__/__init__.cpython-39.pyc
+Test-Data/__pycache__/__init__.cpython-39.pyc
+Test-Suite_login/__pycache__/__init__.cpython-39.pyc
+Test-Suite_login/__pycache__/test_01_login.cpython-39.pyc
+Test-Suite_login/__pycache__/test_02_login.cpython-39.pyc
+Test-Suite_Registration/__pycache__/__init__.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_01_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_02_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_03_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_04_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_05_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_06_Registration.cpython-39.pyc
+Test-Suite_Registration/__pycache__/test_07_Registration.cpython-39.pyc
