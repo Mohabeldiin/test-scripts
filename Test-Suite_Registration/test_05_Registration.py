@@ -1,5 +1,5 @@
 """this test case Check all the optional fields when filling data
-    TC_04_Registration from https://www.loginradius.com/blog/async/test-cases-for-registration-and-login-page/"""
+    TC_05_Registration from https://www.loginradius.com/blog/async/test-cases-for-registration-and-login-page/"""
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
