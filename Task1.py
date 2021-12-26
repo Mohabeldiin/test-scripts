@@ -7,6 +7,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
 
 driver.get("https://techwithtim.net")
+driver.set_page_load_timeout(10)
+driver.maximize_window()
+driver.implicitly_wait(10)
+x = driver.execute_script("return document.readyState")
+if x == "complete":
+    assert True
+else:
+    assert False
 print(driver.title)
 
 
