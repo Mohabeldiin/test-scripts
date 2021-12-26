@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-class Test_02_Registration(unittest.TestCase):
+class Test_03_Registration(unittest.TestCase):
     """1- Enter valid values in the required fields.
        2- Click on the Register button."""
     
