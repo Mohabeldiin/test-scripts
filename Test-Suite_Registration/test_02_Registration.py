@@ -18,11 +18,43 @@ class Test_02_Registration(unittest.TestCase):
         self.driver.get('https://www.facebook.com/')
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
+        self.login_form = (By.CLASS_NAME,"_9vtf")
+        self.sinup_button = (By.NAME,"websubmit")
+        self.creat_new_account = (By.CLASS_NAME, "_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy")
+        self.textfiled_mandatory_symbol = (By.CLASS_NAME, "_5dbc img sp_98fCI7IVTTz_1_5x sx_e1ddd6")
+        self.radio_mandatory_symbol = (By.CLASS_NAME, "_5dbc _5k_6 img sp_98fCI7IVTTz_1_5x sx_e1ddd6")
+        try:
+            main = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located(*self.login_form)
+            )
+            if EC.presence_of_element_located(*self.login_form) :
+                self.creat_new_acount = self.driver.find_element(*self.creat_new_acount)
+                self.creat_new_acount.click()
+        except: assert False
+        
 
 
     def test_01_Required_Fields(self):
         """Check the required fields by not filling any data"""
-        pass
+        try:#clicking the sinup button
+            main = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(*self.sinup_button)
+            )
+            main.click()
+            self.driver.find_element(*self.sinup_button).click()
+        except: assert False
+
+        
+        try:#checking the mandatory_symbol
+            textfileds_mandatorys = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_all_elements_located(*self.textfiled_mandatory_symbol)
+            )
+            radios_mandatorys = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_all_elements_located(*self.radio_mandatory_symbol)
+            )
+            assert len(textfileds_mandatorys) == 4 & len(radios_mandatorys) == 2
+        except: assert False
+
 
 
     def tearDown(self):
