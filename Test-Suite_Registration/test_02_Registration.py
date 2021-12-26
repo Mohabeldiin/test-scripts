@@ -1,4 +1,5 @@
-"""this test case Check the required fields by not filling any data"""
+"""this test case Check the required fields by not filling any data
+    TC_02_Registration from https://www.loginradius.com/blog/async/test-cases-for-registration-and-login-page/"""
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
