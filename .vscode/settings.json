@@ -7,5 +7,18 @@
         "test_*.py"
     ],
     "python.testing.pytestEnabled": false,
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": true,
+    "python.analysis.extraPaths": [
+        "${workspaceRoot}/Modules"
+    ],
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.autoSearchPathsInclude": [
+        "**/*.py"
+    ],
+    "python.autoComplete.extraPaths": [
+        "${workspaceRoot}/Modules"
+    ],
+    "python.autoComplete.extraPathsInclude": [
+        "**/*.py"
+    ]
 }
