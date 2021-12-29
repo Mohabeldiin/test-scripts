@@ -1,4 +1,4 @@
-"""this test case To verify Login functionality with valid email id and valid password.
+"""This test case To verify Login functionality with valid email id and valid password.
    Login_01 from https://sampletestcases.com/latest-sample-testcases-of-facebook-login-page/"""
 import enum
 import unittest
