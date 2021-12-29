@@ -1,10 +1,10 @@
-    """this module contains all pages locators 
-        NOW: now it contains facebook pages locators
-        LATER: it will contain the AI module to auto detect page elments"""
+"""this module contains all pages locators 
+    NOW: now it contains facebook pages locators
+    LATER: it will contain the AI module to auto detect page elments"""
 from selenium.webdriver.common.by import By
+import enum
 
-
-class LoginPageLocators(object):#for now it's just facebook
+class LoginPageLocators(enum.Enum):#for now it's just facebook
     """this class holds facebook login page locators"""
     LOGIN_BUTTON = (By.NAME, 'login')
     REGISTRATION_BUTTON = (By.ID, 'u_0_2_Vw')
@@ -13,7 +13,7 @@ class LoginPageLocators(object):#for now it's just facebook
     FORGOTPASSWORD_HYPERLINK = (By.CLASS_NAME,'_6ltj')
 
 
-class RegistrationPageLocators:#for now it's just facebook
+class RegistrationPageLocators(enum.Enum):#for now it's just facebook
     """this class holds facebook Registration page locators"""
     FIRSTNAME_TEXTFIELD = (By.NAME,'firstname')
     LASTNAME_TEXTFIELD = (By.NAME,'lastname')

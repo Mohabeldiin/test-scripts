@@ -23,3 +23,8 @@ class Test_01_login(unittest.TestCase):
     def tearDown(self):
         """this function run after every test"""
         self.driver.quit()
+
+    
+if __name__ == "__main__":
+    """This is the main function will Run the Unit Test if this Moudle is not imported"""
+    unittest.main()
