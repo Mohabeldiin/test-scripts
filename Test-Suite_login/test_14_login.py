@@ -18,7 +18,7 @@ class Test_14_login(unittest.TestCase):
         email = self.driver.find_element(By.NAME, "email")
         email.send_keys("lol@gmail.com")
         email.send_keys(Keys.TAB)
-    
+        
         try:
           main = WebDriverWait(self.driver,10).until(
             EC.presence_of_all_elements_located(self.Error_message) #need to locate var Error_message=[The email address or mobile number you entered isn't connected to an account]
