@@ -5,9 +5,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from Modules.locator.locator import *
+from ..Modules.locator.locator import LoginPageLocators
+from ..Modules.locator.locator import RegistrationPageLocators
 
-class Test_01_User_Interface(unittest.Testcase):
+class Test_01_User_Interface(unittest.TestCase):
     """this test Checks all the text boxes, radio buttons, buttons, etc"""
 
     def setUp(self):
@@ -135,3 +136,8 @@ class Test_01_User_Interface(unittest.Testcase):
     def tearDown(self):
         """this method will be called after every test"""
         self.driver.quit()
+
+
+if __name__ == "__main__":
+    """This is the main function will Run the Unit Test if this Moudle is not imported"""
+    unittest.main()
