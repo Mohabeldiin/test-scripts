@@ -16,9 +16,9 @@ class Test_14_login(unittest.TestCase):
         """this function Passing valid email and blank password"""
         email = self.driver.find_element(By.NAME, "email")
         email.send_keys("lol@gmail.com")
-        passwd = self.driver.find_element(By.NAME, "pass")
-        passwd.send_keys(" ")
-        passwd.send_keys(Keys.RETURN)
+        #passwd = self.driver.find_element(By.NAME, "pass")
+        #passwd.send_keys("")
+        #passwd.send_keys(Keys.RETURN)
 
         try:
           main = WebDriverWait(self.driver,10).until(
@@ -30,3 +30,7 @@ class Test_14_login(unittest.TestCase):
     def tearDown(self):
         """this function run after every test"""
         self.driver.quit()
+            
+if __name__ == "__main__":
+    """This is the main function will Run the Unit Test if this Moudle is not imported"""
+    unittest.main()
