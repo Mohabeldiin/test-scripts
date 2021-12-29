@@ -30,7 +30,7 @@ class Test_06_Registration(unittest.TestCase):
             2.test@gmail.com
             3.testAtgmail.com
             4.test@gmailcom"""
-    
+
     def setUp(self):
         """this method will be called before every test"""
         self.driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
@@ -66,10 +66,9 @@ class Test_06_Registration(unittest.TestCase):
                 han7tag n8iarha b3diin le ba2ii el mwak3"""
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
-                )
+            )
         except:
             assert False
-
 
     def test_02_Email_validation(self):
         """Check the Email text field that has a random string instead of a real email."""
@@ -83,10 +82,9 @@ class Test_06_Registration(unittest.TestCase):
                 han7tag n8iarha b3diin le ba2ii el mwak3"""
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
-                )
+            )
         except:
             assert False
-
 
     def test_03_Email_validation(self):
         """Check the Email text field that has @ symbol written in words."""
@@ -100,7 +98,7 @@ class Test_06_Registration(unittest.TestCase):
                 han7tag n8iarha b3diin le ba2ii el mwak3"""
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
-                )
+            )
         except:
             assert False
 
@@ -116,10 +114,9 @@ class Test_06_Registration(unittest.TestCase):
                 han7tag n8iarha b3diin le ba2ii el mwak3"""
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
-                )
+            )
         except:
             assert False
-
 
     def tearDown(self):
         """this method will be called after every test"""
