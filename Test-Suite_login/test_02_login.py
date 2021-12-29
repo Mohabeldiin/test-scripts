@@ -13,6 +13,7 @@ class Test_02_login(unittest.TestCase):
     self.driver.implicitly_wait(10)
 
   def test_02(self):
+    """this function Passing invalid email and password"""
     email = self.driver.find_element(By.NAME, "email")
     email.send_keys("rose22@gmail.com")
     passwd = self.driver.find_element(By.NAME, "pass")
