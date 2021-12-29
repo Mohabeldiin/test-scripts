@@ -1,7 +1,5 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common import action_chains
-from selenium.webdriver.common import keys
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -31,17 +29,14 @@ class Test_01_login(unittest.TestCase):
             if EC.presence_of_all_elements_located(self.Error_message):assert True
         except: assert False"""
             
-        tab_key= ActionChains() # was try to know if tab button works
+        tab_key= ActionChains(self) # was try to know if tab button works
         tab_key.send_keys(keys.TAB)
         tab_key.perform() 
         try:
-            main = WebDriverWait(self.driver,10).until(
-                EC.element_to_be_selected(self.passwd)
-                )
-            if EC.element_to_be_selected(self.passwd):
-                self.passwd.send_keys("123456789")
-                self.passwd.send_keys(Keys.RETURN)
-                assert True
+            main = WebDriverWait(self.driver,10).until(EC.element_to_be_selected(self.passwd))
+            main.send_keys("123456")
+            main.send_keys(Keys.ENTER)
+            assert main.is_selected()
         except: assert False
         #passwd = self.driver.find_element(By.NAME, "pass")
     
@@ -49,3 +44,6 @@ class Test_01_login(unittest.TestCase):
     def tearDown(self):
         """this function run after every test"""
         self.driver.quit()
+
+    if __name__ == "__main__":
+        unittest.main()

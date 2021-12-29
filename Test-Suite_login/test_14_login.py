@@ -11,14 +11,16 @@ class Test_14_login(unittest.TestCase):
         self.driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
         self.driver.get("https://facebook.com")
         self.driver.implicitly_wait(10)
+        self.Error_message = (By.CLASS_NAME, "_9ay7")
         
     def test_01(self):
         """this function Passing valid email and blank password"""
         email = self.driver.find_element(By.NAME, "email")
         email.send_keys("lol@gmail.com")
-        passwd = self.driver.find_element(By.NAME, "pass")
-        passwd.send_keys(" ")
-        passwd.send_keys(Keys.RETURN)
+        email.send_keys(Keys.TAB)
+        #passwd = self.driver.find_element(By.NAME, "pass")
+        #passwd.send_keys(" ")
+        #passwd.send_keys(Keys.RETURN)
 
         try:
           main = WebDriverWait(self.driver,10).until(
