@@ -23,21 +23,17 @@ class Test_14_login(unittest.TestCase):
         self.email_locator = (By.NAME, "email")
         self.password_locator = (By.NAME, "pass")
         self.Errormessage_locator = (By.CLASS_NAME, "_9ay7")
-        #self.email = self.driver.find_element(*self.email_locator)
-        #self.passwd = self.driver.find_element(*self.password_locator)
         
     def test_14(self):
         """verify that error message display when any field is left blank."""
-        email = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(self.email_locator)
-        )
-        passwd = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(self.password_locator)
-        )
-        passwd.send_keys(Test_Data.password)
-        passwd.send_keys(Keys.RETURN)
-        if EC.visibility_of_element_located(self.Errormessage_locator):assert True
-        else: assert False
+        try:
+          passwd = WebDriverWait(self.driver, 10).until(
+              EC.presence_of_element_located(self.password_locator)
+          )
+          passwd.send_keys(Test_Data.password.value)
+          passwd.send_keys(Keys.RETURN)
+          if EC.visibility_of_element_located(self.Errormessage_locator):assert True
+        except: assert False
 
     def tearDown(self):
         """this function run after every test"""
