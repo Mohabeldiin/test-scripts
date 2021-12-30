@@ -171,3 +171,6 @@ Modules/page/__pycache__/
 Test-Data/__pycache__/
 Test-Suite_login/__pycache__/
 Test-Suite_Registration/__pycache__/
+
+# API 
+API/node_modules
