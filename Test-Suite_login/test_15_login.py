@@ -1,23 +1,25 @@
+"""This test case To verify Tab key functionality on the Login page.
+   Login_15 from https://sampletestcases.com/latest-sample-testcases-of-facebook-login-page/"""
+import enum
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common import action_chains
-from selenium.webdriver.common import keys
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class Test_01_login(unittest.TestCase):
-    """foo"""
+
+class Test_15_login(unittest.TestCase):
+    """To verify Tab key functionality on the Login page."""
     def setUp(self):
         """this function run before every test"""
         self.driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
-        self.driver.get("https://facebook.com")
         self.driver.implicitly_wait(10)
-        #m7taga t3mlii da 3shan lma moshklit el packging ta7al t8yarii el satrean dool bs
-        self.email = self.driver.find_element(By.NAME, "email")
-        self.passwd = self.driver.find_element(By.NAME, "pass")
+        self.driver.get("https://facebook.com")
+        self.email_locator = (By.NAME, "email")
+        self.password_locator = (By.NAME, "pass")
+        #self.email = self.driver.find_element(*self.email_locator)
+        #self.passwd = self.driver.find_element(*self.password_locator)
         
     def test_01(self):
         """this function Passing valid phone and password"""

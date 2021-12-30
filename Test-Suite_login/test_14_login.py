@@ -8,31 +8,41 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
+class Test_Data(enum.Enum):
+    """Test data for login test case"""
+    email = ""
+    password = "12345678"
 
 class Test_14_login(unittest.TestCase):
-    """foo"""
+    """To verify that error message display when any field is left blank."""
     def setUp(self):
         """this function run before every test"""
         self.driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
-        self.driver.get("https://facebook.com")
         self.driver.implicitly_wait(10)
+        self.driver.get("https://facebook.com")
+        self.email_locator = (By.NAME, "email")
+        self.password_locator = (By.NAME, "pass")
+        self.Errormessage_locator = (By.CLASS_NAME, "_9ay7")
+        #self.email = self.driver.find_element(*self.email_locator)
+        #self.passwd = self.driver.find_element(*self.password_locator)
         
-    def test_01(self):
-        """this function Passing valid email and blank password"""
-        email = self.driver.find_element(By.NAME, "email")
-        email.send_keys("lol@gmail.com")
-        passwd = self.driver.find_element(By.NAME, "pass")
-        passwd.send_keys(" ")
+    def test_14(self):
+        """verify that error message display when any field is left blank."""
+        email = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.email_locator)
+        )
+        passwd = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.password_locator)
+        )
+        passwd.send_keys(Test_Data.password)
         passwd.send_keys(Keys.RETURN)
-
-        try:
-          main = WebDriverWait(self.driver,10).until(
-            EC.presence_of_all_elements_located(self.Error_message) #need to locate var Error_message=[The email address or mobile number you entered isn't connected to an account]
-          )
-          if EC.presence_of_all_elements_located(self.Error_message):assert True
-        except: assert False
+        if EC.visibility_of_element_located(self.Errormessage_locator):assert True
+        else: assert False
 
     def tearDown(self):
         """this function run after every test"""
         self.driver.quit()
+        
+if __name__ == "__main__":
+    """This is the main function will Run the Unit Test if this Moudle is not imported"""
+    unittest.main()
