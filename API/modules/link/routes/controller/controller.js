@@ -1,8 +1,8 @@
 const fs = require('fs')//The fs module enables interacting with the file system(json file).
 const path = require('path')//The path module provides utilities for working with file and directory paths.
 
-const filePath = path.join(__dirname, '../../../../DB/dbUsers.json')
-const indexPath = path.join(__dirname, 'http://localhost:3000/index.html')
+const filePath = path.join(__dirname, '../../../../DB/Test-Data.json')
+
 //__dirname to get url from c to controller file
 //path.join resolve location from c to '../../../../DB/dbUsers.json'
 
