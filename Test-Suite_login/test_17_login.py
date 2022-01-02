@@ -25,7 +25,7 @@ class Test_17_login(unittest.TestCase):
         self.email_locator = (By.NAME, "email")
         self.password_locator = (By.NAME, "pass")
 
-    def test_15(self):
+    def test_17(self):
         """To verify that entered multiple times incorrect passwords."""
         
         try:
