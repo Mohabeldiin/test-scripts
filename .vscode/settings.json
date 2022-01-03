@@ -15,6 +15,7 @@
     "python.analysis.autoSearchPathsInclude": [
         "**/*.py"
     ],
+    "python.analysis.typeCheckingMode": "basic",
     "python.autoComplete.extraPaths": [
         "${workspaceRoot}/Modules"
     ],
