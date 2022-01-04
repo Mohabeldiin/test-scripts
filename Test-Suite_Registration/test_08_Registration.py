@@ -43,7 +43,6 @@ class Test_08_Registration(unittest.TestCase):
 
         self.phone_textfiled_locator = (By.NAME,'reg_email__')
         self.sinUp_button_locator = (By.NAME, "websubmit")
-        self.textfiled_mandatory_symbol = (By.CLASS_NAME, "_5dbc img sp_98fCI7IVTTz_1_5x sx_e1ddd6")
         self.error_message_locator = (By.ID, "reg_error_inner")
 
     def test_01_Phone_Number_validation(self):
@@ -81,7 +80,6 @@ class Test_08_Registration(unittest.TestCase):
         except AssertionError:
             print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
             assert False
-        
 
     def tearDown(self):
         """this method will be called after every test"""
