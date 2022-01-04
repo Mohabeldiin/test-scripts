@@ -17,7 +17,10 @@ class Test_Data(object):
 class Test_11_Registration(unittest.TestCase):
     """Check the password limit when enter value less than min\n
     1- Enter value which is alphanumeric but less than 8.\n
-    2- Click on Register button."""
+    2- Click on Register button.
+    NOTE:
+            This is a Not Applicable Test Case.
+            facebook does not have validation message for password length."""
 
     def setUp(self):
         """this method will be called before every test"""
@@ -42,7 +45,7 @@ class Test_11_Registration(unittest.TestCase):
 
         self.password_textfiled_locator = (By.NAME, 'reg_passwd__')
         self.sinUp_button_locator = (By.NAME, "websubmit")
-        self.error_message_locator = (By.ID, "reg_error_inner")
+        self.error_message_locator = (By.ID, "foo")
 
 
     def test_01_Password_Validation(self):
