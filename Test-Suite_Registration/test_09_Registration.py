@@ -45,7 +45,7 @@ class Test_09_Registration(unittest.TestCase):
         self.sinUp_button_locator = (By.NAME, "websubmit")
         self.error_message_locator = (By.ID, "reg_error_inner")
 
-    def test_foo_foo(self):
+    def test_01_Phone_Number_validation(self):
         """Check the phone number when not pass country code.\n
         EC: It should show the validation message for country code is required.
         NOTE:
