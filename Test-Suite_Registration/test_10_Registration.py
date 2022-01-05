@@ -57,6 +57,9 @@ class Test_10_Registration(unittest.TestCase):
             except AssertionError:
                 print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
                 assert False
+            except TimeoutException:
+                print("\n###############\n",TimeoutException.__doc__ , "Can't fined error message:", self.phone_textfiled_locator , "\n###############\n")
+                assert False
             try:
                 sinup = WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located(self.sinUp_button_locator)
@@ -64,6 +67,9 @@ class Test_10_Registration(unittest.TestCase):
                 sinup.click()
             except AssertionError:
                 print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+                assert False
+            except TimeoutException:
+                print("\n###############\n",TimeoutException.__doc__ , "Can't fined error message:", self.sinUp_button_locator , "\n###############\n")
                 assert False
             try:
                 if WebDriverWait(self.driver, 10).until(
@@ -75,6 +81,9 @@ class Test_10_Registration(unittest.TestCase):
                     assert False
             except AssertionError:
                 print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+                assert False
+            except TimeoutException:
+                print("\n###############\n",TimeoutException.__doc__ , "Can't fined error message:", self.error_message_locator , "\n###############\n")
                 assert False
         except AssertionError:
             print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
