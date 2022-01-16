@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class Test_Data(object):
     """this class is enum holds the test data that is used in this test case"""
+
     PHONE_NUMBER = "9012078654"
 
 
@@ -22,26 +23,31 @@ class Test_09_Registration(unittest.TestCase):
 
     def setUp(self):
         """this method will be called before every test"""
+        print("###############")
         self.driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
         self.driver.implicitly_wait(5)
-        self.driver.get('https://www.facebook.com/')
+        self.driver.get("https://www.facebook.com/")
         self.driver.maximize_window()
-        self.login_form_locator = (By.CLASS_NAME,"_9vtf")
+        self.login_form_locator = (By.CLASS_NAME, "_9vtf")
         self.creat_new_account_locator = (By.LINK_TEXT, "Create New Account")
 
         try:
-            if WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located(self.login_form_locator)
-            ).is_displayed():
+            if(
+                WebDriverWait(self.driver, 10)
+                .until(EC.presence_of_element_located(self.login_form_locator))
+                .is_displayed()
+            ):
                 self.creat_new_acount = WebDriverWait(self.driver, 10).until(
                     EC.element_to_be_clickable(self.creat_new_account_locator)
                 )
                 self.creat_new_acount.click()
         except TimeoutException:
-            print("\n###############\n",TimeoutException.__doc__ , "\n###############\n")
+            print("###############")
+            print(TimeoutException.__doc__)
+            print("###############")
             assert False
 
-        self.phone_textfiled_locator = (By.NAME,'reg_email__')
+        self.phone_textfiled_locator = (By.NAME, "reg_email__")
         self.sinUp_button_locator = (By.NAME, "websubmit")
         self.error_message_locator = (By.ID, "reg_error_inner")
 
@@ -60,7 +66,9 @@ class Test_09_Registration(unittest.TestCase):
                 )
                 phone.send_keys(Test_Data.PHONE_NUMBER)
             except AssertionError:
-                print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+                print("###############")
+                print(AssertionError.__doc__ )
+                print("###############")
                 assert False
             try:
                 sinup = WebDriverWait(self.driver, 10).until(
@@ -68,7 +76,9 @@ class Test_09_Registration(unittest.TestCase):
                 )
                 sinup.click()
             except AssertionError:
-                print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+                print("###############")
+                print(AssertionError.__doc__)
+                print("###############")
                 assert False
             try:
                 if WebDriverWait(self.driver, 10).until(
@@ -79,14 +89,19 @@ class Test_09_Registration(unittest.TestCase):
                     print("EC != AC")
                     assert False
             except AssertionError:
-                print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+                print("###############")
+                print(AssertionError.__doc__)
+                print("###############")
                 assert False
         except AssertionError:
-            print("\n###############\n",AssertionError.__doc__ , "\n###############\n")
+            print("###############")
+            print(AssertionError.__doc__)
+            print("###############")
             assert False
 
     def tearDown(self):
         """this method will be called after every test"""
+        print("###############")
         self.driver.quit()
 
 
