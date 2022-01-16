@@ -32,7 +32,7 @@ class Test_09_Registration(unittest.TestCase):
         self.creat_new_account_locator = (By.LINK_TEXT, "Create New Account")
 
         try:
-            if(
+            if (
                 WebDriverWait(self.driver, 10)
                 .until(EC.presence_of_element_located(self.login_form_locator))
                 .is_displayed()
@@ -67,7 +67,7 @@ class Test_09_Registration(unittest.TestCase):
                 phone.send_keys(Test_Data.PHONE_NUMBER)
             except AssertionError:
                 print("###############")
-                print(AssertionError.__doc__ )
+                print(AssertionError.__doc__)
                 print("###############")
                 assert False
             try:
