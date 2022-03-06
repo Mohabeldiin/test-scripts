@@ -41,14 +41,14 @@ class Test_06_Registration(unittest.TestCase):
         self.creat_new_account_locator = (By.ID, "u_0_2_Yq")
 
         try:
-            main = WebDriverWait(self.driver, 10).until(
+            if WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located(self.login_form_locator)
-            )
-            self.creat_new_acount = self.driver.find_element(
-                *self.creat_new_account_locator
-            )
+                ):
+                self.creat_new_acount = self.driver.find_element(
+                    *self.creat_new_account_locator
+                )
             self.creat_new_acount.click()
-        except:
+        except AssertionError:
             assert False
 
         self.email_textfiled_locator = (By.NAME, "reg_email__")
@@ -67,7 +67,7 @@ class Test_06_Registration(unittest.TestCase):
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
             )
-        except:
+        except AssertionError:
             assert False
 
     def test_02_Email_validation(self):
@@ -83,7 +83,7 @@ class Test_06_Registration(unittest.TestCase):
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
             )
-        except:
+        except AssertionError:
             assert False
 
     def test_03_Email_validation(self):
@@ -99,7 +99,7 @@ class Test_06_Registration(unittest.TestCase):
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
             )
-        except:
+        except AssertionError:
             assert False
 
     def test_04_Email_validation(self):
@@ -115,7 +115,7 @@ class Test_06_Registration(unittest.TestCase):
             assert EC.invisibility_of_element_located(
                 self.confirme_email_textfiled_locator
             )
-        except:
+        except AssertionError:
             assert False
 
     def tearDown(self):
