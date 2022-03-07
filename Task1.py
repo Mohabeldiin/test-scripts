@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 driver = webdriver.Chrome("C:\\Program Files (x86)\\chromedriver.exe")
-
+#hi
 driver.get("https://techwithtim.net") 
 print(driver.title)
 
