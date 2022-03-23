@@ -71,16 +71,9 @@ class Modern(unittest.TestCase):
             print(ex)
             self.assertTrue(False)
 
-
     def tearDown(self):
         """this method will be called after every test"""
         self.driver.quit()
-
-
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
