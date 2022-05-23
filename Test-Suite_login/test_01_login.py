@@ -1,11 +1,11 @@
 """this test case To verify Login functionality with valid email id and valid password.
    Login_01 from https://sampletestcases.com/latest-sample-testcases-of-facebook-login-page/"""
-import enum
-import unittest
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+import enum 
+import unittest 
+from selenium import webdriver 
+from selenium.webdriver.common.keys import Keys 
+from selenium.webdriver.common.by import By  
+from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
 
 class Test_Data(enum.Enum):
@@ -39,7 +39,7 @@ class Test_01_login(unittest.TestCase):
                 EC.presence_of_element_located(self.password_locator)
             )
             passwd.send_keys(Test_Data.password.value)
-            passwd.send_keys(Keys.RETURN)
+            passwd.send_keys(Keys.RETURN) # 
             assert "Facebook" in self.driver.title
         except: assert False
 
